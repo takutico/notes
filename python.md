@@ -53,3 +53,29 @@ class MyHTMLParser(HTMLParser):
 parser = MyHTMLParser()
 parser.feed("<html><head><title>HTML Parser - I</title></head><body><h1>HackerRank</h1><br /></body></html>")
 ```
+
+states = ["texas", "california", "ohio", "florida"]
+weather = ["hot", "medium", "no_idea", "hot"]
+for weather, state in zip(weather, states):
+    print(weather + ' in ' + state)
+
+
+
+states = ["texas", "california", "ohio", "florida"]
+weather = ["hot", "medium", "no_idea", "hot"]
+for weather, state in izip(weather, states):
+    print(weather + ' in ' + state)
+
+
+
+states = ["texas", "california", "ohio", "florida"]
+"""
+# bad
+new = []
+for state in states:
+    if 'a' in state:
+        new.append(state)
+"""
+# good
+new = [state for state in states if 'a' in state]
+print new
