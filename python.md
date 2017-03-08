@@ -79,3 +79,25 @@ for state in states:
 # good
 new = [state for state in states if 'a' in state]
 print new
+
+
+# Difference between del, remove and pop on lists
+# http://stackoverflow.com/a/11520540
+
+remove removes the first matching value, not a specific index
+>>> a = [0, 2, 2, 3]
+>>> a.remove(2)
+>>> a
+[0, 2, 3]
+
+del removes a specific index
+>>> a = [3, 2, 2, 1]
+>>> del a[1]
+[3, 2, 1]
+
+and pop returns the removed element by index
+>>> a = [0, 2, 3, 2]
+>>> a.pop(2)
+3
+>>> a
+[0, 2, 2]
