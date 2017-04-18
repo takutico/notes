@@ -9,3 +9,4 @@ print(sorted(d, key=d.get, reverse=True))
 print(sorted(d.items(), key=lambda x:x[1]))
 # [('first', 1), ('second', 2), ('third', 3), ('Fourth', 4)]
 
+print(sorted(d.items(), key=lambda x:x[1], reverse=True))
