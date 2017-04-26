@@ -1,0 +1,5 @@
+[
+	{ "keys": ["super+d"], "command": "duplicate_line" },
+	{"keys": ["alt+super+l"], "command": "reindent", "args": {"single_line": false}}
+]
+
