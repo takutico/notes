@@ -1,20 +1,9 @@
-"""
-0
-1
-1
-2
-3
-5
-8
-13
-"""
+def read_file(file):
+	with open(file) as f:
+		for line in f:
+			for w in word_list:
+				word_count[w] = word_count[w] + 1 if w in word_count else 1
+			yield line
 
-
-def fibonacci(n):
-	a, b = 0, 1
-	for i in range(n):
-		print(a)
-		a, b = b, a + b 
-
-
-fibonacci(10)
+for i in read_file('most_frecuent_words.txt'):
+	print(i)

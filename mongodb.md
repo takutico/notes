@@ -1,34 +1,45 @@
 Start mongo db
->>> mongod
+```
+>>> mongod```
 
 access to mongodb
->>> mongo
+```>>> mongo```
 
 Access to DB and collections
+```
 > use blog
 > show collections
+```
 
 insert into db
+```
 > db.names.insert({'name':'Takuya Yamaguchi'});
 > db.names.insertOne();
 > db.names.insertMany();
+```
 
 find in db
-> db.names.find()
+```> db.names.find()```
 
 find
+```
 > db.movies.find().pretty()
 > db.movies.find({'year': 1981}).pretty()
+```
 
 interect thought movies elements
+```
 > var m = db.movies.find()
 > c.hasNext()
 > c.next()
+```
 
 Change value and save
+```
 > var j = db.names.findOne()
 > j.name = "takuya yamaguchi padilla"
 > db.names.save(j)
+```
 
 db.students.createIndex({student_id:1})
 db.students.createIndex({"class":1, "student_id":1})
