@@ -80,6 +80,7 @@ db.products.aggregate([
     }
 ])
 ```
+<<<<<<< HEAD
 $project
 ```
 db.products.aggregate([
@@ -108,6 +109,9 @@ db.zips.aggregate([
 ])
 ```
 match and group
+=======
+Match, group and project
+
 ```
 db.zips.aggregate([
     {$match:
