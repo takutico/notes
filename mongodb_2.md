@@ -11,7 +11,6 @@ db.products.aggregate([
 ```
 Group by multiple keys
 ```
-use agg
 db.products.aggregate([
   {$group: {
     _id: {
@@ -28,7 +27,6 @@ db.zips.aggregate([{"$group":{"_id":"$state", "population":{$sum:"$pop"}}}])
 ```
 Average
 ```
-use agg
 db.products.aggregate([
     {$group:
      {
@@ -42,7 +40,6 @@ db.products.aggregate([
 ```
 addToSet
 ```
-use agg
 db.products.aggregate([
     {$group:
      {
@@ -59,7 +56,6 @@ db.zips.aggregate([{"$group":{"_id":"$city", "postal_codes":{$addToSet:"$_id"}}}
 ```
 Push
 ```
-use agg
 db.products.aggregate([
     {$group:
      {
@@ -73,7 +69,6 @@ db.products.aggregate([
 ```
 max
 ```
-use agg
 db.products.aggregate([
     {$group:
      {
@@ -81,6 +76,50 @@ db.products.aggregate([
 	     "maker":"$manufacturer"
 	 },
 	 maxprice:{$max:"$price"}
+     }
+    }
+])
+```
+$project
+```
+db.products.aggregate([
+    {$project:
+     {
+	 _id:0,
+	 'maker': {$toLower:"$manufacturer"},
+	 'details': {'category': "$category",
+		     'price' : {"$multiply":["$price",10]}
+		    },
+	 'item':'$name'
+     }
+    }
+])
+
+db.zips.aggregate([{$project:{_id:0, city:{$toLower:"$city"}, pop:1, state:1, zip:"$_id"}}])
+```
+$match
+```
+db.zips.aggregate([
+    {$match:
+     {
+	 state:"NY"
+     }
+    }
+])
+```
+match and group
+```
+db.zips.aggregate([
+    {$match:
+     {
+	 state:"NY"
+     }
+    },
+    {$group:
+     {
+	 _id: "$city",
+	 population: {$sum:"$pop"},
+	 zip_codes: {$addToSet: "$_id"}
      }
     }
 ])
