@@ -4,26 +4,26 @@ docker-machine ls
 ```
 #### RUN DOCKER
 ```
->>> docker-machine start default
+$ docker-machine start [docker-machine]
 ```
 #### SSH DOCKER MACHINE
 ```
->>> docker-machine ssh default
+$ docker-machine ssh default
 ```
 #### Check running dockers
 ```
->>> docker-machine env default
+$ docker-machine env [docker-machine]
 ```
 #### Start docker image with compose
 ```
->>> cd ~/Project/[project_name]
->>> docker-compose up
+$ cd ~/Project/[project_name]
+$ docker-compose up
 or
->>> docker-compose up [docker-image-name]
+$ docker-compose up [docker-image-name]
 ```
 #### List Docker containers
 ```
->>> docker ps -a
+$ docker ps -a
 ```
 ```
 docker-compose build no cache
