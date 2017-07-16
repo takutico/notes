@@ -16,6 +16,8 @@ gcloud config list
 ##### Deploy
 ```
 gcloud app deploy
+gcloud app deploy --verbosity=info
+gcloud app deploy --project [YOUR_PROJECT_ID]
 ```
 
 ##### stream logs
