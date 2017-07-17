@@ -1,14 +1,18 @@
 Start mongo db
 ```
->>> mongod```
+$ mongod
+```
 
 access to mongodb
-```>>> mongo```
+```
+$ mongo
+```
 
 Access to DB and collections
 ```
-> use blog
-> show collections
+$ show bds
+$ use blog
+$ show collections
 ```
 
 insert into db
@@ -19,7 +23,9 @@ insert into db
 ```
 
 find in db
-```> db.names.find()```
+```
+$ db.names.find()
+```
 
 find
 ```
