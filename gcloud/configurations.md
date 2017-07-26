@@ -1,3 +1,5 @@
+https://cloud.google.com/sdk/docs/managing-configurations
+
 ##### To **delete** a named configuration, run:
 ```
     $ gcloud config configurations delete [my_config]
