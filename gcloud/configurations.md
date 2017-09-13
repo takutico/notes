@@ -16,3 +16,7 @@ https://cloud.google.com/sdk/docs/managing-configurations
 ```
 gcloud config configurations activate [my_config]
 ```
+##### Set configuration
+```
+gcloud config set project [PROJECT_ID]
+```
